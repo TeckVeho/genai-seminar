@@ -1,26 +1,30 @@
 export function PricingFooterSection() {
   return (
-    <footer style={{ backgroundColor: "#02396B" }} className="text-white">
-      <div className="container mx-auto px-4 py-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-6">
+    <footer className="bg-brand-secondary text-white">
+      <div className="container mx-auto px-4 py-10 md:px-6">
+        <div className="mb-6 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <p className="text-xl font-bold mb-1">株式会社 DX研究所</p>
-            <p className="text-sm text-white/70">物流事務DX人材育成プログラム</p>
-            <p className="text-xs text-white/50 mt-2 max-w-md leading-relaxed">
+            <p className="text-fluid-heading-lg mb-1 font-bold">株式会社 DX研究所</p>
+            <p className="text-sm text-white/70">
+              物流企業特化 -
+              <br />
+              AI人材育成プログラム
+            </p>
+            <p className="mt-2 max-w-md text-xs leading-relaxed text-white/50">
               〒102-0093 東京都千代田区平河町１－７－３ 第四大盛丸平河町ビル３階
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 text-sm text-white/80">
+          <div className="flex flex-col gap-2 text-sm text-white/80 sm:flex-row sm:flex-wrap sm:gap-4">
             <a
               href="mailto:hikota@d-dxlab.com"
-              className="hover:text-white transition-colors"
+              className="transition-colors hover:text-white"
             >
               hikota@d-dxlab.com
             </a>
-            <span className="hidden sm:inline text-white/40">|</span>
+            <span className="hidden text-white/40 sm:inline">|</span>
             <a
               href="tel:0352178988"
-              className="hover:text-white transition-colors"
+              className="transition-colors hover:text-white"
             >
               03-5217-8988
             </a>

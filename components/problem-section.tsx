@@ -20,35 +20,28 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="py-20 px-4" style={{ backgroundColor: "#F5F5F5" }}>
+    <section className="section-y section-x bg-brand-light-gray">
       <div className="container mx-auto">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-          style={{ color: "#02396B" }}
-        >
+        <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-12">
           物流事務の非効率が、現場の負担になっていませんか？
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {problems.map((item, i) => {
             const Icon = item.icon
             return (
               <div
                 key={i}
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="rounded-xl bg-white p-4 text-center shadow-soft md:p-8"
               >
-                <div
-                  className="flex justify-center mb-4"
-                  style={{ color: "#005BAC" }}
-                >
-                  <Icon size={60} />
+                <div className="mb-4 flex justify-center text-brand-primary">
+                  <Icon className="size-12 md:size-[60px]" strokeWidth={1.5} />
                 </div>
-                <h3
-                  className="text-xl font-bold mb-4"
-                  style={{ color: "#02396B" }}
-                >
+                <h3 className="text-fluid-heading mb-4 font-bold text-brand-secondary">
                   {item.title}
                 </h3>
-                <p className="text-left text-gray-600">{item.body}</p>
+                <p className="text-fluid-body text-left text-gray-600">
+                  {item.body}
+                </p>
               </div>
             )
           })}

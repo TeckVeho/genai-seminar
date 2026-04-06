@@ -54,26 +54,17 @@ function CurriculumList({
   return (
     <ul className="mt-6 space-y-0">
       {steps.map((step, i) => (
-        <li key={i} className="relative pl-10 pb-6">
+        <li key={i} className="relative pb-6 pl-10">
           {i < steps.length - 1 && (
-            <span
-              className="absolute left-[15px] top-7 bottom-0 w-0.5"
-              style={{ backgroundColor: "#005BAC" }}
-            />
+            <span className="absolute bottom-0 left-[15px] top-7 w-0.5 bg-brand-primary" />
           )}
-          <span
-            className="absolute left-0 top-0 w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
-            style={{ backgroundColor: "#005BAC" }}
-          >
+          <span className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white">
             {startFrom + i}
           </span>
-          <strong
-            className="block text-base font-bold"
-            style={{ color: "#02396B" }}
-          >
+          <strong className="text-fluid-heading block font-bold text-brand-secondary">
             {step.title}
           </strong>
-          <p className="text-sm text-gray-600 mt-1">{step.body}</p>
+          <p className="text-fluid-caption mt-1 text-gray-600">{step.body}</p>
         </li>
       ))}
     </ul>
@@ -84,32 +75,22 @@ export function FeaturesSection() {
   return (
     <section
       id="curriculum"
-      className="py-20 px-4"
-      style={{ backgroundColor: "#F5F5F5" }}
+      className="section-y section-x bg-brand-light-gray"
     >
       <div className="container mx-auto">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
-          style={{ color: "#02396B" }}
-        >
+        <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-16">
           オンライン座学とオフライン実践を組み合わせたカリキュラム
         </h2>
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3
-              className="text-2xl font-bold mb-6 border-b-2 border-blue-200 pb-4"
-              style={{ color: "#02396B" }}
-            >
+        <div className="grid gap-x-12 gap-y-12 md:grid-cols-2 md:gap-y-16">
+          <div className="rounded-xl bg-white p-4 shadow-soft md:p-8">
+            <h3 className="text-fluid-heading-lg mb-6 border-b-2 border-blue-200 pb-4 font-bold text-brand-secondary">
               オンライン座学（5時間）
             </h3>
             <CurriculumList steps={onlineSteps} startFrom={1} />
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3
-              className="text-2xl font-bold mb-6 border-b-2 border-blue-200 pb-4"
-              style={{ color: "#02396B" }}
-            >
+          <div className="rounded-xl bg-white p-4 shadow-soft md:p-8">
+            <h3 className="text-fluid-heading-lg mb-6 border-b-2 border-blue-200 pb-4 font-bold text-brand-secondary">
               オフライン実践（5時間）
             </h3>
             <CurriculumList steps={offlineSteps} startFrom={6} />

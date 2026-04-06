@@ -1,8 +1,11 @@
 "use client"
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const faqItems = [
   {
@@ -32,51 +35,28 @@ const faqItems = [
 ]
 
 export function AppEventSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-
   return (
-    <section id="faq" className="py-20 px-4 bg-white">
+    <section id="faq" className="section-y section-x bg-white">
       <div className="container mx-auto">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-          style={{ color: "#02396B" }}
-        >
+        <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-12">
           よくあるご質問
         </h2>
-        <div className="max-w-3xl mx-auto space-y-4">
+        <Accordion type="single" collapsible className="mx-auto max-w-3xl space-y-4">
           {faqItems.map((item, i) => (
-            <div
+            <AccordionItem
               key={i}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+              value={`item-${i}`}
+              className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-soft data-[state=open]:shadow-soft-md"
             >
-              <button
-                type="button"
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors"
-              >
-                <span
-                  className="text-base font-bold pr-4"
-                  style={{ color: "#02396B" }}
-                >
-                  Q. {item.q}
-                </span>
-                <ChevronDown
-                  className={cn(
-                    "flex-shrink-0 transition-transform",
-                    openIndex === i ? "rotate-180" : ""
-                  )}
-                  style={{ color: "#005BAC" }}
-                  size={20}
-                />
-              </button>
-              {openIndex === i && (
-                <div className="px-6 pb-6 border-t border-gray-100">
-                  <p className="pt-4 text-gray-600">A. {item.a}</p>
-                </div>
-              )}
-            </div>
+              <AccordionTrigger className="text-fluid-heading min-h-[52px] items-center gap-3 px-4 py-4 text-left font-bold text-brand-secondary hover:no-underline sm:px-6 sm:py-5 [&>svg]:text-brand-primary">
+                Q. {item.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-fluid-body border-t border-gray-100 px-4 pb-4 text-gray-600 sm:px-6">
+                A. {item.a}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   )

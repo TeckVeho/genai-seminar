@@ -17,30 +17,20 @@ const solutions = [
 
 export function SolutionSection() {
   return (
-    <section id="solution" className="py-20 px-4 bg-white">
+    <section id="solution" className="section-y section-x bg-white">
       <div className="container mx-auto text-center">
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-12"
-          style={{ color: "#02396B" }}
-        >
+        <h2 className="text-fluid-section mb-8 font-bold text-brand-secondary md:mb-12">
           DX研究所の研修が選ばれる3つの理由
         </h2>
-        <div className="max-w-3xl mx-auto text-left space-y-8">
+        <div className="mx-auto max-w-3xl space-y-8 text-left">
           {solutions.map((item, i) => (
-            <div key={i} className="flex items-start space-x-4">
-              <CheckCircle2
-                size={28}
-                className="flex-shrink-0 mt-1"
-                style={{ color: "#005BAC" }}
-              />
+            <div key={i} className="flex items-start gap-3 sm:gap-4">
+              <CheckCircle2 className="mt-0.5 size-6 shrink-0 text-brand-primary sm:size-7" />
               <div>
-                <h3
-                  className="text-xl font-bold"
-                  style={{ color: "#02396B" }}
-                >
+                <h3 className="text-fluid-heading font-bold text-brand-secondary">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-gray-600">{item.body}</p>
+                <p className="text-fluid-body mt-1 text-gray-600">{item.body}</p>
               </div>
             </div>
           ))}

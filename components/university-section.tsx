@@ -23,36 +23,28 @@ const steps = [
 
 export function UniversitySection() {
   return (
-    <section
-      id="flow"
-      className="py-20 px-4"
-      style={{ backgroundColor: "#F5F5F5" }}
-    >
+    <section id="flow" className="section-y section-x bg-brand-light-gray">
       <div className="container mx-auto">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
-          style={{ color: "#02396B" }}
-        >
+        <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-16">
           導入の流れ
         </h2>
         <div className="relative">
-          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 border-t-2 border-dashed border-gray-300" />
-          <div className="relative grid md:grid-cols-4 gap-8 text-center">
+          <div className="absolute left-0 top-12 hidden h-0.5 w-full border-t-2 border-dashed border-gray-300 lg:block" />
+          <div className="relative grid grid-cols-1 gap-8 text-center sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {steps.map((step, i) => (
               <div key={i} className="flex flex-col items-center">
-                <div
-                  className="w-24 h-24 flex items-center justify-center text-white rounded-full text-3xl font-bold mb-4 z-10"
-                  style={{ backgroundColor: "#005BAC" }}
-                >
+                {i > 0 && (
+                  <div className="flex justify-center py-2 sm:hidden" aria-hidden>
+                    <div className="h-10 w-0 border-l-2 border-dashed border-gray-300" />
+                  </div>
+                )}
+                <div className="z-10 mb-4 flex size-16 shrink-0 items-center justify-center rounded-full bg-brand-primary text-fluid-step font-bold text-white sm:size-20 lg:size-24">
                   {step.number}
                 </div>
-                <h3
-                  className="text-xl font-bold mb-2"
-                  style={{ color: "#02396B" }}
-                >
+                <h3 className="text-fluid-heading mb-2 font-bold text-brand-secondary">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{step.body}</p>
+                <p className="text-fluid-caption text-gray-600">{step.body}</p>
               </div>
             ))}
           </div>

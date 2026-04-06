@@ -1,5 +1,7 @@
 import { FileText, Settings2, CheckCircle2 } from "lucide-react"
 
+import { cn } from "@/lib/utils"
+
 const outcomes = [
   {
     icon: FileText,
@@ -20,36 +22,32 @@ const outcomes = [
 
 export function GrowthSection() {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="section-y section-x bg-white">
       <div className="container mx-auto">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-          style={{ color: "#02396B" }}
-        >
+        <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-12">
           研修で得られる3つの成果
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {outcomes.map((item, i) => {
             const Icon = item.icon
             return (
               <div
                 key={i}
-                className="bg-gray-50 p-8 rounded-lg shadow-lg text-center border-t-4"
-                style={{ borderTopColor: "#005BAC" }}
+                className={cn(
+                  "rounded-xl border-t-4 border-brand-primary bg-gray-50 p-4 text-center shadow-soft md:p-8",
+                  i === outcomes.length - 1 &&
+                    "sm:col-span-2 sm:mx-auto sm:max-w-md lg:col-span-1 lg:max-w-none"
+                )}
               >
-                <div
-                  className="flex justify-center mb-4"
-                  style={{ color: "#005BAC" }}
-                >
-                  <Icon size={60} />
+                <div className="mb-4 flex justify-center text-brand-primary">
+                  <Icon className="size-12 md:size-[60px]" strokeWidth={1.5} />
                 </div>
-                <h3
-                  className="text-xl font-bold mb-4"
-                  style={{ color: "#02396B" }}
-                >
+                <h3 className="text-fluid-heading mb-4 font-bold text-brand-secondary">
                   {item.title}
                 </h3>
-                <p className="text-left text-gray-600">{item.body}</p>
+                <p className="text-fluid-body text-left text-gray-600">
+                  {item.body}
+                </p>
               </div>
             )
           })}

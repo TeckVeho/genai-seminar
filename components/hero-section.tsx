@@ -2,7 +2,10 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X } from "lucide-react"
+
+import { FadeInOnScroll } from "@/components/fade-in-on-scroll"
+import { cn } from "@/lib/utils"
 
 const navLinks = [
   { href: "#solution", label: "選ばれる理由" },
@@ -18,119 +21,123 @@ export function HeroSection() {
 
   return (
     <div>
-      {/* ===== NAVBAR ===== */}
-      <header
-        className="sticky top-0 z-50 shadow-md"
-        style={{ backgroundColor: "#02396B" }}
-      >
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-secondary/88 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-brand-secondary/78">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <a href="#" className="flex items-center shrink-0 py-1">
+          <div className="flex h-20 items-center justify-between">
+            <a href="#" className="flex shrink-0 items-center py-1">
               <Image
                 src="/images/dx-logo.png"
                 alt="Digital Transformation（DX）ロゴ"
                 width={320}
                 height={96}
-                className="h-8 md:h-10 w-auto max-w-[min(100%,260px)]"
+                className="h-8 w-auto max-w-[min(100%,260px)] md:h-10"
                 priority
               />
             </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6">
+            <nav className="hidden items-center space-x-6 lg:flex">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-white/90 hover:text-white font-semibold transition-colors"
+                  className="font-semibold text-white/90 transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
               ))}
               <a
                 href="#contact"
-                className="px-5 py-2 rounded-full font-bold text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#F58220" }}
+                className="rounded-full px-5 py-2 font-bold text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "var(--brand-accent)" }}
               >
                 無料相談する
               </a>
             </nav>
 
-            {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-white"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="メニューを開く"
+              type="button"
+              className="-mr-1 flex min-h-[44px] min-w-[44px] items-center justify-center text-white lg:hidden"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
             >
               {menuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div
-            className="lg:hidden border-t border-white/20"
-            style={{ backgroundColor: "#02396B" }}
-          >
-            <nav className="flex flex-col items-center p-4 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-white/90 hover:text-white font-semibold"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+        <div
+          className={cn(
+            "overflow-hidden border-white/20 transition-[max-height] duration-300 ease-out lg:hidden",
+            menuOpen ? "max-h-[28rem] border-t" : "max-h-0 border-t-0"
+          )}
+          style={{ backgroundColor: "var(--brand-secondary)" }}
+        >
+          <nav className="flex flex-col gap-1 p-4">
+            {navLinks.map((link) => (
               <a
-                href="#contact"
-                className="w-full text-center px-5 py-2 rounded-full font-bold text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#F58220" }}
+                key={link.href}
+                href={link.href}
+                className="flex min-h-[44px] items-center justify-center rounded-lg px-4 font-semibold text-white/90 hover:text-white"
                 onClick={() => setMenuOpen(false)}
               >
-                無料相談する
+                {link.label}
               </a>
-            </nav>
-          </div>
-        )}
+            ))}
+            <a
+              href="#contact"
+              className="mt-2 flex min-h-[44px] w-full items-center justify-center rounded-full px-5 py-2 font-bold text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "var(--brand-accent)" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              無料相談する
+            </a>
+          </nav>
+        </div>
       </header>
 
-      {/* ===== HERO ===== */}
-      <section className="relative text-white" style={{ height: "80vh" }}>
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
+      <section className="relative min-h-[80dvh] text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
             alt="プロフェッショナルチームがモダンなオフィスでノートパソコンを囲んでコラボレーションしている"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
           />
         </div>
-        {/* Overlay */}
         <div
           className="absolute inset-0"
           style={{ backgroundColor: "rgba(2, 57, 107, 0.6)" }}
         />
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-2xl md:text-3xl font-bold">
-            物流事務のDX人材を育成し、現場の生産性を変える
+        <FadeInOnScroll className="relative z-10 flex min-h-[80dvh] flex-col items-center justify-center px-4 py-12 text-center">
+          <p className="text-fluid-hero mb-2 max-w-3xl font-bold leading-snug text-white/95">
+            生成AIで、現場の事務と生産性を変える
+          </p>
+          <h1 className="text-fluid-display mb-4 max-w-4xl font-bold leading-tight">
+            物流企業特化 -<br />
+            AI人材育成プログラム
           </h1>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mt-2 mb-4">
-            物流事務DX人材育成プログラム
-          </h2>
-          <p className="text-base md:text-lg max-w-2xl mb-8">
-            生成AIを使い、電話対応・伝票入力・請求処理・文書作成を効率化。全10回・10時間で、現場ですぐ使える実践力を。
+          <p className="text-fluid-lead mb-8 max-w-2xl text-white/95">
+            定型業務・文書作成・社内外のコミュニケーションを効率化。全10回・10時間で、
+            <br />
+            現場ですぐ使える実践力を。
           </p>
           <a
             href="#contact"
-            className="inline-block px-10 py-4 rounded-full text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#F58220" }}
+            className="text-fluid-lead block w-full max-w-md rounded-full px-8 py-4 font-bold text-white shadow-soft-md transition-opacity hover:opacity-90 sm:inline-block sm:w-auto sm:max-w-none sm:px-10"
+            style={{ backgroundColor: "var(--brand-accent)" }}
           >
             無料相談・資料請求はこちら
           </a>
-        </div>
+          <div
+            className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2"
+            aria-hidden
+          >
+            <ChevronDown className="size-8 animate-bounce text-white/70" />
+          </div>
+        </FadeInOnScroll>
       </section>
     </div>
   )

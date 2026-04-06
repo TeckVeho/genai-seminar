@@ -1,24 +1,27 @@
+import Image from "next/image"
+
 export function AboutMediaSection() {
   return (
-    <section className="relative py-24 bg-gray-800 text-white">
+    <section className="relative overflow-hidden bg-gray-800 py-16 text-white md:py-24">
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop"
           alt="オフィスミーティング"
-          className="w-full h-full object-cover opacity-30"
+          fill
+          className="object-cover opacity-30"
+          sizes="100vw"
         />
       </div>
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <div className="relative z-10 container mx-auto px-4 text-center md:px-6">
+        <h2 className="text-fluid-section mb-4 font-bold">
           物流事務の「手作業」を、生成AIで変える。
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-200 mb-8">
+        <p className="text-fluid-lead mx-auto mb-8 max-w-2xl text-gray-200">
           AIエージェント機能で伝票・請求・報告書の作成を効率化。10時間の研修で、各拠点のDX人材を育成しませんか。
         </p>
         <a
           href="#contact"
-          className="inline-block px-10 py-4 rounded-full text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#F58220" }}
+          className="text-fluid-lead mx-auto block w-full max-w-md rounded-full bg-brand-accent px-8 py-4 font-bold text-white shadow-soft-md transition-opacity hover:opacity-90 sm:inline-block sm:w-auto sm:max-w-none sm:px-10"
         >
           無料相談はこちら
         </a>

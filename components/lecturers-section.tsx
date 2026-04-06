@@ -17,45 +17,32 @@ const lecturers = [
 
 export function LecturersSection() {
   return (
-    <section
-      id="lecturers"
-      className="py-20 px-4"
-      style={{ backgroundColor: "#F5F5F5" }}
-    >
+    <section id="lecturers" className="section-y section-x bg-brand-light-gray">
       <div className="container mx-auto">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
-          style={{ color: "#02396B" }}
-        >
+        <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-16">
           経験豊富なプロフェッショナル講師陣
         </h2>
-        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-10">
           {lecturers.map((lecturer, i) => (
             <div
               key={i}
-              className="bg-white rounded-lg shadow-lg p-8 flex flex-col sm:flex-row items-center gap-8"
+              className="flex flex-col items-center gap-4 rounded-xl bg-white p-6 shadow-soft md:p-8"
             >
               <img
                 src={lecturer.imgSrc}
                 alt={lecturer.imgAlt}
                 width={128}
                 height={128}
-                className="w-32 h-32 rounded-full flex-shrink-0 object-cover"
+                className="h-32 w-32 shrink-0 rounded-full object-cover"
               />
-              <div>
-                <h3
-                  className="text-2xl font-bold"
-                  style={{ color: "#02396B" }}
-                >
+              <div className="text-center md:text-left">
+                <h3 className="text-fluid-heading-lg font-bold text-brand-secondary">
                   {lecturer.name}
                 </h3>
-                <p
-                  className="font-semibold mb-2"
-                  style={{ color: "#005BAC" }}
-                >
+                <p className="mb-2 font-semibold text-brand-primary">
                   {lecturer.role}
                 </p>
-                <p className="text-sm text-gray-600">{lecturer.bio}</p>
+                <p className="text-fluid-body text-gray-600">{lecturer.bio}</p>
               </div>
             </div>
           ))}
