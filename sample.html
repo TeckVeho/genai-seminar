@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一般社員向け 生成AI実践研修 - 全社員のスキルで組織を効率化 | DX研究所</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom styles and overrides */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Offset for sticky header */
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #333333;
+        }
+        
+        /* Custom colors from the design system */
+        .primary-color { color: #005BAC; }
+        .primary-bg { background-color: #005BAC; }
+        .secondary-color { color: #02396B; }
+        .secondary-bg { background-color: #02396B; }
+        .accent-color { color: #F58220; }
+        .accent-bg { background-color: #F58220; }
+        .light-gray-bg { background-color: #F5F5F5; }
+
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px; /* Adjust as needed */
+            transition: max-height 0.5s ease-in;
+        }
+        .accordion-item.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        /* Custom list for curriculum */
+        .curriculum-list li {
+            position: relative;
+            padding-left: 2.5rem; /* Space for number */
+            padding-bottom: 1.5rem;
+            border-left: 2px solid #005BAC;
+        }
+        .curriculum-list li:last-child {
+            border-left: 2px solid transparent;
+        }
+        .curriculum-list li::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -1rem;
+            top: -0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #005BAC;
+            color: white;
+            font-weight: bold;
+        }
+
+
+        /* Responsive header */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- 1. Header -->
+    <header id="header" class="secondary-bg text-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Name -->
+                <a href="#" class="text-2xl font-bold text-white">
+                    DX研究所
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-6">
+                    <a href="#solution" class="text-white/90 hover:text-white font-semibold">選ばれる理由</a>
+                    <a href="#curriculum" class="text-white/90 hover:text-white font-semibold">カリキュラム</a>
+                    <a href="#lecturers" class="text-white/90 hover:text-white font-semibold">講師紹介</a>
+                    <a href="#flow" class="text-white/90 hover:text-white font-semibold">導入の流れ</a>
+                    <a href="#faq" class="text-white/90 hover:text-white font-semibold">よくあるご質問</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden mobile-menu secondary-bg border-t border-white/20">
+            <nav id="mobile-nav-links" class="flex flex-col items-center p-4 space-y-4">
+                <a href="#solution" class="text-white/90 hover:text-white font-semibold">選ばれる理由</a>
+                <a href="#curriculum" class="text-white/90 hover:text-white font-semibold">カリキュラム</a>
+                <a href="#lecturers" class="text-white/90 hover:text-white font-semibold">講師紹介</a>
+                <a href="#flow" class="text-white/90 hover:text-white font-semibold">導入の流れ</a>
+                <a href="#faq" class="text-white/90 hover:text-white font-semibold">よくあるご質問</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section class="relative text-white" style="height: 80vh;">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="A team of professionals collaborating around a laptop in a modern office." class="w-full h-full object-cover">
+            </div>
+            <!-- Overlay -->
+            <div class="absolute inset-0" style="background-color: rgba(2, 57, 107, 0.6);"></div>
+            <!-- Content -->
+            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+                <h1 class="text-2xl md:text-3xl font-bold">全社員のAIスキルを底上げし、組織全体の生産性を革新する</h1>
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mt-2 mb-4">一般社員向け 生成AI実践研修</h2>
+                <p class="text-base md:text-lg max-w-2xl">特別なスキルは不要。明日から使えるAI活用術を、すべての社員に。</p>
+            </div>
+        </section>
+
+        <!-- 3. Pain Points Section -->
+        <section class="py-20 light-gray-bg">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center secondary-color mb-12">AI活用が、一部の部署で止まっていませんか？</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="flex justify-center mb-4 text-6xl primary-color">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 secondary-color">社員の当事者意識が低い</h3>
+                        <p class="text-left">「AIは専門部署やITに詳しい人が使うもの」という空気が蔓延。多くの一般社員が、自分事として捉えられていない。</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="flex justify-center mb-4 text-6xl primary-color">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 secondary-color">効果が組織に波及しない</h3>
+                        <p class="text-left">一部の社員だけが研修を受けても、周りの理解や協力が得られず、個人のスキルアップで終わり、組織全体の効率化に繋がらない。</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="flex justify-center mb-4 text-6xl primary-color">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 secondary-color">日常業務での活用が進まない</h3>
+                        <p class="text-left">ツールの知識だけでは、自分の仕事にどう活かせば良いか分からない。結果、ほとんどの社員が研修後もAIを使わなくなってしまう。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Solution Section -->
+        <section id="solution" class="py-20 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold secondary-color mb-12">DX研究所の「全員参加型」研修が<br>組織の壁を打ち破ります</h2>
+                <div class="max-w-3xl mx-auto text-left space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <i class="fa-solid fa-circle-check text-2xl primary-color flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold secondary-color">一般社員の日常業務に直結したプログラム</h3>
+                            <p class="mt-1">専門用語を極力排し、メール作成、情報収集、資料作成の補助など、誰もの業務に共通する身近なテーマから始め、成功体験を積んでもらいます。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i class="fa-solid fa-circle-check text-2xl primary-color flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold secondary-color">「教え合い」を促す参加型ワークショップ</h3>
+                            <p class="mt-1">部署混合のグループワークを多く取り入れ、互いの業務でのAI活用アイデアを共有。組織内に自然な「教え合い」の文化を醸成し、活用を促進します。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i class="fa-solid fa-circle-check text-2xl primary-color flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold secondary-color">全社展開を見据えた継続サポート</h3>
+                            <p class="mt-1">研修後、各部署でAI活用を推進するアンバサダーを育成。社内勉強会の開催支援などを通じ、研修効果を一過性で終わらせません。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Curriculum Section -->
+        <section id="curriculum" class="py-20 light-gray-bg">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center secondary-color mb-16">知識と実践を組み合わせた研修カリキュラム</h2>
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-16">
+                    <!-- e-Learning -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold secondary-color mb-6 border-b-2 border-blue-200 pb-4">e-Learning / リアルタイム研修 (12時間)</h3>
+                        <ul class="curriculum-list mt-6">
+                            <li data-step="1"><strong class="font-bold block text-lg secondary-color">全体像とAIの基礎</strong><p class="text-sm">研修ゴールの明確化、生成AIの仕組みやモデルの概要を学習</p></li>
+                            <li data-step="2"><strong class="font-bold block text-lg secondary-color">最新AIの比較と使い分け</strong><p class="text-sm">最新のAIモデル（Claude, Gemini, ChatGPT等）の種類と特性を学び、業務に応じた最適なツールの使い分けを習得します。</p></li>
+                            <li data-step="3"><strong class="font-bold block text-lg secondary-color">生成AIの様々な活用事例</strong><p class="text-sm">各業界・業種の実践事例から学ぶ成功ポイント</p></li>
+                            <li data-step="4"><strong class="font-bold block text-lg secondary-color">リスクと注意</strong><p class="text-sm">データ漏洩や誤情報、バイアスなどAI活用時の注意点</p></li>
+                            <li data-step="5"><strong class="font-bold block text-lg secondary-color">プロンプトエンジニアリング</strong><p class="text-sm">効果的な入力方法やテンプレート化の手法を体系的に学習</p></li>
+                            <li data-step="6"><strong class="font-bold block text-lg secondary-color">業務への適用方法 - 業務適応6STEP</strong><p class="text-sm">自社の業務へ具体的に落とし込むステップを明確化</p></li>
+                        </ul>
+                    </div>
+                    <!-- Workshop -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold secondary-color mb-6 border-b-2 border-blue-200 pb-4">ワークショップ (12時間)</h3>
+                        <ul class="curriculum-list mt-6">
+                            <li data-step="1"><strong class="font-bold block text-lg secondary-color">業務分解添削</strong><p class="text-sm">作成した「業務分解シート」を講師がレビュー。具体的な改善提案で、最終的なAI活用ポイントを洗い出す</p></li>
+                            <li data-step="2"><strong class="font-bold block text-lg secondary-color">優先順位の特定ワークショップ</strong><p class="text-sm">洗い出した業務リストから、ROIが高い業務を特定。「すぐ成果の出る業務」から順番にAI化を進めるための戦略づくり</p></li>
+                            <li data-step="3"><strong class="font-bold block text-lg secondary-color">プロンプトのFB・添削指導</strong><p class="text-sm">受講者が作成したプロンプトテンプレを講師が丁寧にチェック・改善。エラー原因や改善点を具体的に提示し、精度と再現性を高める</p></li>
+                            <li data-step="4"><strong class="font-bold block text-lg secondary-color">実践ワークフロー構築</strong><p class="text-sm">ワークフロー自動化ツールを用いて、身近な業務をAIで自動化できるようになるカリキュラムです。</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Outcomes Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center secondary-color mb-12">研修で得られる3つの成果</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Outcome 1 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500">
+                        <div class="flex justify-center mb-4 text-6xl primary-color">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 secondary-color">自社用プロンプトテンプレが数百個完成</h3>
+                        <p class="text-left">研修内で講師の添削を受けながら実際に作成するため、すぐ現場で使える高品質なテンプレートが豊富に揃います。</p>
+                    </div>
+                    <!-- Outcome 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500">
+                        <div class="flex justify-center mb-4 text-6xl primary-color">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 secondary-color">AI化の余地を自ら発見・行動できる組織に</h3>
+                        <p class="text-left">e-Learningやワークショップを通じて、「この業務もAI化できるのでは？」という視点が自然と身につき、ボトムアップでの改善が生まれます。</p>
+                    </div>
+                    <!-- Outcome 3 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500">
+                        <div class="flex justify-center mb-4 text-6xl primary-color">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 secondary-color">ほぼ全ての業務に生成AIを適用可能に</h3>
+                        <p class="text-left">「どのような業務に活かせるのか」ではなく、「どこにでも使える」という汎用的なスキルを獲得し、組織全体の生産性を最大化します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Lecturer Section -->
+        <section id="lecturers" class="py-20 light-gray-bg">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center secondary-color mb-16">経験豊富なプロフェッショナル講師陣</h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- Lecturer 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col sm:flex-row items-center gap-8">
+                        <img src="https://placehold.co/400x400/02396B/FFFFFF?text=講師A" alt="講師Aのプロフィール写真" class="w-32 h-32 rounded-full flex-shrink-0 object-cover">
+                        <div>
+                            <h3 class="text-2xl font-bold secondary-color">茂木 秀彦</h3>
+                            <p class="primary-color font-semibold mb-2">DX研究所 代表</p>
+                            <p class="text-sm">DX研究所代表として各社の業務DX化に尽力。現在は生成AIを用いた各社の業務改善支援サポートにも着手している。</p>
+                        </div>
+                    </div>
+                    <!-- Lecturer 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col sm:flex-row items-center gap-8">
+                        <img src="https://placehold.co/400x400/005BAC/FFFFFF?text=講師B" alt="講師Bのプロフィール写真" class="w-32 h-32 rounded-full flex-shrink-0 object-cover">
+                        <div>
+                            <h3 class="text-2xl font-bold secondary-color">池田 航平</h3>
+                            <p class="primary-color font-semibold mb-2">AI コンサルタント</p>
+                            <p class="text-sm">VEHO Worksで生成AI導入を多数経験後、独立。現在も中小企業を中心に、現場で使えるAI導入支援を展開している。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Subsidy Section -->
+        <section class="py-20 bg-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold secondary-color mb-4">助成金活用による費用サポート</h2>
+                    <p class="max-w-3xl mx-auto mb-12 text-lg">全社員を対象とした大規模な研修も、人材開発支援助成金を活用し、導入コストを大幅に削減可能です。</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <div class="flex justify-center mb-4 text-7xl primary-color">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+                        <p class="text-xl font-bold secondary-color">企業負担</p>
+                        <p class="text-5xl font-bold accent-color">実質40%~</p>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8 md:border-l border-gray-200">
+                        <h3 class="text-2xl font-bold secondary-color mb-4">人材開発支援助成金（事業展開等リスキリング支援コース）</h3>
+                        <p class="mb-4">新規事業の立ち上げなどの事業展開に伴い、新たな分野で必要となる知識及び技能を習得させるための訓練を計画に沿って実施した場合に、訓練経費や訓練期間中の賃金の一部を助成する制度です。</p>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <p class="font-bold">助成率: 最大60%</p>
+                            <p class="text-sm">※助成額や要件は変更される場合があります。詳細はお問い合わせください。</p>
+                        </div>
+                        <p class="mt-4 font-semibold">面倒な申請手続きのサポートも行っておりますので、お気軽にご相談ください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. How to Implement Section -->
+        <section id="flow" class="py-20 light-gray-bg">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center secondary-color mb-16">導入の流れ</h2>
+                <div class="relative">
+                    <!-- Dashed line for desktop -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 border-t-2 border-dashed -translate-y-1/2"></div>
+                    <div class="relative grid md:grid-cols-4 gap-8 text-center">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 flex items-center justify-center primary-bg text-white rounded-full text-3xl font-bold mb-4 z-10">01</div>
+                            <h3 class="text-xl font-bold secondary-color mb-2">ヒアリング</h3>
+                            <p>社員の皆様の現状や<br>課題を詳しくお伺いします。</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 flex items-center justify-center primary-bg text-white rounded-full text-3xl font-bold mb-4 z-10">02</div>
+                            <h3 class="text-xl font-bold secondary-color mb-2">プログラム設計</h3>
+                            <p>一般社員の皆様に最適な<br>研修内容をご提案。</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 flex items-center justify-center primary-bg text-white rounded-full text-3xl font-bold mb-4 z-10">03</div>
+                            <h3 class="text-xl font-bold secondary-color mb-2">研修の実施</h3>
+                            <p>プロ講師による<br>楽しく実践的な研修を提供。</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 flex items-center justify-center primary-bg text-white rounded-full text-3xl font-bold mb-4 z-10">04</div>
+                            <h3 class="text-xl font-bold secondary-color mb-2">評価・改善</h3>
+                            <p>効果測定とフィードバックで<br>継続的にサポート。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ Section -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center secondary-color mb-12">よくあるご質問</h2>
+                <div class="max-w-3xl mx-auto space-y-4" id="faq-accordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item bg-white rounded-lg shadow-sm border">
+                        <button class="accordion-header w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-lg font-bold secondary-color">Q. PCスキルに自信がない社員でも参加できますか？</span>
+                            <i class="fa-solid fa-chevron-down primary-color accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p>A. はい、全く問題ありません。本研修は、PCの基本操作ができる方であれば、どなたでもご参加いただけるように設計されています。専門知識は一切不要です。</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item bg-white rounded-lg shadow-sm border">
+                        <button class="accordion-header w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-lg font-bold secondary-color">Q. オンラインでの研修は可能ですか？</span>
+                            <i class="fa-solid fa-chevron-down primary-color accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p>A. はい、可能です。対面研修、オンライン研修、あるいは両方を組み合わせたハイブリッド形式など、貴社のご要望に合わせて柔軟に対応いたします。</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item bg-white rounded-lg shadow-sm border">
+                        <button class="accordion-header w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-lg font-bold secondary-color">Q. 研修の費用はどのくらいかかりますか？</span>
+                            <i class="fa-solid fa-chevron-down primary-color accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p>A. 費用は研修内容、期間、参加人数などによって異なります。人材開発支援助成金を活用することで、企業様の負担を大幅に軽減できる場合がございますので、まずはお気軽にご相談ください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Final Closing Section -->
+        <section class="relative py-24 bg-gray-800 text-white">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop" class="w-full h-full object-cover opacity-30" alt="Office meeting">
+            </div>
+            <div class="relative z-10 container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">AI活用を、一部の特権から全社員の標準スキルへ。</h2>
+                <p class="max-w-2xl mx-auto">AIを使いこなす社員一人ひとりの小さな一歩が、組織全体の大きな飛躍に繋がります。<br>私たちと共に、貴社の未来を担う人材を育成しませんか。</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 11. Footer -->
+    <footer class="secondary-bg text-white">
+        <div class="container mx-auto px-4 py-8">
+            <p class="text-center text-sm">&copy; DX研究所.inc All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.getElementById('mobile-nav-links');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            // --- Close mobile menu on link click ---
+            if(mobileNavLinks && mobileMenu) {
+                mobileNavLinks.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') {
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // --- Accordion Functionality ---
+            function setupAccordion(accordionId) {
+                const accordion = document.getElementById(accordionId);
+                if (!accordion) return;
+
+                const items = accordion.querySelectorAll('.accordion-item');
+
+                items.forEach(item => {
+                    const header = item.querySelector('.accordion-header');
+                    header.addEventListener('click', () => {
+                        const currentlyActive = item.classList.contains('active');
+                        items.forEach(otherItem => {
+                            if (otherItem.classList.contains('active')) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+                        if (!currentlyActive) {
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+            
+            setupAccordion('faq-accordion');
+        });
+    </script>
+
+</body>
+</html>
+
