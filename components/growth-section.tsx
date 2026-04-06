@@ -1,22 +1,22 @@
-import { FileText, Settings2, CheckCircle2 } from "lucide-react"
+import { BookOpen, Settings2, Users } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
 const outcomes = [
   {
-    icon: FileText,
-    title: "個別の業務ソリューションが完成",
-    body: "受講者ごとに自分の課題を解決する自動化ソリューションを構築。Excel・Word等としてそのまま現場で活用できます。",
+    icon: Users,
+    title: "「使える人材」が社内に育つ",
+    body: "生成AIの基礎から実践的な活用まで一気通貫で習得。研修修了後は、指示を待つことなく自ら生成AIツールを業務に組み込める人材が育ちます。",
   },
   {
     icon: Settings2,
-    title: "Before/After を定量計測",
-    body: "事前・事後アンケート（AIスキル自己評価・定型作業時間等）で変化を可視化。レーダーチャート付きレポートを研修終了後1週間以内に提出します。",
+    title: "定型業務の時間を、本来の仕事へ",
+    body: "文書作成・データ整理・社内外のやりとりといった繰り返し業務をAIで自動化。一人ひとりの作業時間を削減し、付加価値の高い業務に集中できる環境をつくります。",
   },
   {
-    icon: CheckCircle2,
-    title: "ナレッジが組織に残る",
-    body: "成果発表会でチーム全体にノウハウを共有。プロジェクト機能で社内ナレッジベースとして蓄積できます。",
+    icon: BookOpen,
+    title: "個人の成果が、組織の資産になる",
+    body: "研修で構築した業務効率化ソリューションは、最終回の成果発表会でチーム全体に共有。現場で培ったノウハウが社内ナレッジとして定着し、研修後も組織に価値が残り続けます。",
   },
 ]
 

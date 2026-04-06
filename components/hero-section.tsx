@@ -24,15 +24,11 @@ export function HeroSection() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-secondary/88 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-brand-secondary/78">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex h-20 items-center justify-between">
-            <a href="#" className="flex shrink-0 items-center py-1">
-              <Image
-                src="/images/dx-logo.png"
-                alt="Digital Transformation（DX）ロゴ"
-                width={320}
-                height={96}
-                className="h-8 w-auto max-w-[min(100%,260px)] md:h-10"
-                priority
-              />
+            <a
+              href="#"
+              className="flex shrink-0 items-center py-1 text-lg font-bold tracking-tight text-white md:text-xl"
+            >
+              DX研究所
             </a>
 
             <nav className="hidden items-center space-x-6 lg:flex">
@@ -116,7 +112,7 @@ export function HeroSection() {
             生成AIで、現場の事務と生産性を変える
           </p>
           <h1 className="text-fluid-display mb-4 max-w-4xl font-bold leading-tight">
-            物流企業特化 -<br />
+            物流企業特化<br />
             AI人材育成プログラム
           </h1>
           <p className="text-fluid-lead mb-8 max-w-2xl text-white/95">
