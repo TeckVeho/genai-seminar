@@ -3,10 +3,9 @@ import { Resend } from "resend"
 
 import { contactFormSchema } from "@/lib/contact-schema"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: Request) {
-  if (!process.env.RESEND_API_KEY) {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
     return NextResponse.json(
       { error: "メール送信の設定が完了していません。" },
       { status: 500 }
@@ -54,6 +53,7 @@ export async function POST(request: Request) {
     <p><strong>お問い合わせ内容</strong><br />${escapeHtml(messageText).replace(/\n/g, "<br />")}</p>
   `
 
+  const resend = new Resend(apiKey)
   const { error } = await resend.emails.send({
     from,
     to: [to],
