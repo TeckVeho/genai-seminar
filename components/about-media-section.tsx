@@ -6,7 +6,7 @@ export function AboutMediaSection() {
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop"
-          alt="オフィスミーティング"
+          alt="チームでのミーティング"
           fill
           className="object-cover opacity-30"
           sizes="100vw"
@@ -14,10 +14,10 @@ export function AboutMediaSection() {
       </div>
       <div className="relative z-10 container mx-auto px-4 text-center md:px-6">
         <h2 className="text-fluid-section mb-4 font-bold">
-          物流事務の「手作業」を、生成AIで変える。
+          物流現場の「手作業」を、生成AIで変える。
         </h2>
         <p className="text-fluid-lead mx-auto mb-8 max-w-2xl text-gray-200">
-          AIエージェント機能で伝票・請求・報告書の作成を効率化。10時間の研修で、各拠点のDX人材を育成しませんか。
+          AIエージェント機能で報告書・議事録・連絡文書の作成を効率化。10時間の研修で、各拠点のDX人材を育成しませんか。
         </p>
         <a
           href="#contact"

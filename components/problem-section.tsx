@@ -3,18 +3,18 @@ import { HelpCircle, BarChart3, Lightbulb } from "lucide-react"
 const problems = [
   {
     icon: HelpCircle,
-    title: "電話・伝票・請求…手作業が減らない",
-    body: "配車指示の電話対応記録、送り状・伝票入力、請求照合を手作業のまま続けており、ミスや残業の温床になっている。",
+    title: "報告・記録・連絡…手作業が減らない",
+    body: "電話対応の記録、報告書・議事録の作成、情報の転記を手作業のまま続けており、ミスや残業の温床になっている。",
   },
   {
     icon: BarChart3,
     title: "拠点ごとにやり方がバラバラ",
-    body: "複数拠点に分散する事務スタッフ間でノウハウが共有されず、同じ非効率が各所で繰り返されている。",
+    body: "部署・拠点ごとにやり方がバラバラで、ノウハウが共有されず、同じ非効率が各所で繰り返されている。",
   },
   {
     icon: Lightbulb,
     title: "AIツールを学んでも業務に落とせない",
-    body: "一般的なAI研修を受けても「自分の伝票業務にどう使えばいいのか」が分からず、活用が定着しない。",
+    body: "一般的なAI研修を受けても「自分の日常業務にどう使えばいいのか」が分からず、活用が定着しない。",
   },
 ]
 
@@ -23,7 +23,7 @@ export function ProblemSection() {
     <section className="section-y section-x bg-brand-light-gray">
       <div className="container mx-auto">
         <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-12">
-          物流事務の非効率が、現場の負担になっていませんか？
+          現場の非効率が、社員の負担になっていませんか？
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {problems.map((item, i) => {

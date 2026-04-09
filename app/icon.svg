@@ -1,14 +1,33 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#2563eb"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
+      <stop offset="0%" stop-color="#005BAC"/>
+      <stop offset="100%" stop-color="#02396B"/>
     </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="55%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#005BAC" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <!-- Rounded square background -->
   <rect width="32" height="32" rx="7" fill="url(#bg)"/>
-  <!-- Main AI sparkle (large 4-pointed star with concave sides) -->
-  <path d="M16 4 Q20.5 11.5 28 16 Q20.5 20.5 16 28 Q11.5 20.5 4 16 Q11.5 11.5 16 4Z" fill="white"/>
-  <!-- Small secondary sparkle (top-right) -->
-  <path d="M25.5 5.5 Q27 7.5 29 8.5 Q27 9.5 25.5 11.5 Q24 9.5 22 8.5 Q24 7.5 25.5 5.5Z" fill="white" opacity="0.65"/>
+  <rect width="32" height="32" rx="7" fill="url(#glow)"/>
+  <!-- Neural network: edges (2 inputs → hidden → output) -->
+  <path
+    d="M10 12 L22 12 M10 12 L16 20 M22 12 L16 20 M16 20 L16 25"
+    stroke="white"
+    stroke-width="1.85"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.88"
+  />
+  <!-- Input nodes -->
+  <circle cx="10" cy="12" r="2.75" fill="white"/>
+  <circle cx="22" cy="12" r="2.75" fill="white"/>
+  <!-- Hidden layer -->
+  <circle cx="16" cy="20" r="2.4" fill="white" opacity="0.95"/>
+  <!-- Output / AI core (accent) -->
+  <circle cx="16" cy="25" r="3.1" fill="#F58220"/>
+  <circle cx="16" cy="25" r="3.1" fill="none" stroke="white" stroke-width="0.85" opacity="0.45"/>
+  <!-- Tiny generative sparkle -->
+  <path d="M26.5 6 L27.1 7.4 L28.6 8 L27.1 8.6 L26.5 10 L25.9 8.6 L24.4 8 L25.9 7.4 Z" fill="white" opacity="0.55"/>
 </svg>

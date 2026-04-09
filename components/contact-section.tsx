@@ -63,7 +63,7 @@ export function ContactSection() {
             まずはお気軽にご相談ください
           </h2>
           <p className="text-fluid-lead mx-auto max-w-2xl text-gray-600">
-            資料請求・助成金の一般的な説明・開催形式のご提案まで対応いたします。研修内容・費用など、どんな小さなご質問でもお気軽にどうぞ。
+            助成金の一般的な説明・開催形式のご提案まで対応いたします。研修内容・費用など、どんな小さなご質問でもお気軽にどうぞ。
             <br />
             通常2営業日以内にご返信いたします。
           </p>
@@ -77,7 +77,7 @@ export function ContactSection() {
             </a>{" "}
             <span className="text-gray-400">／</span>{" "}
             <a
-              href="mailto:hikota@d-dxlab.com?subject=%E7%89%A9%E6%B5%81%E4%BA%8B%E5%8B%99DX%E4%BA%BA%E6%9D%90%E8%82%B2%E6%88%90%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
+              href="mailto:hikota@d-dxlab.com?subject=%E7%89%A9%E6%B5%81%E4%BC%81%E6%A5%AD%E7%89%B9%E5%8C%96AI%E4%BA%BA%E6%9D%90%E8%82%B2%E6%88%90%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
               className="text-brand-primary underline underline-offset-2 hover:opacity-80"
             >
               MAIL：hikota@d-dxlab.com

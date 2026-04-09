@@ -96,7 +96,7 @@ export function HeroSection() {
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
-            alt="プロフェッショナルチームがモダンなオフィスでノートパソコンを囲んでコラボレーションしている"
+            alt="プロフェッショナルチームがノートパソコンを囲んでコラボレーションしている"
             fill
             className="object-cover"
             sizes="100vw"
@@ -109,7 +109,7 @@ export function HeroSection() {
         />
         <FadeInOnScroll className="relative z-10 flex min-h-[80dvh] flex-col items-center justify-center px-4 py-12 text-center">
           <p className="text-fluid-hero mb-2 max-w-3xl font-bold leading-snug text-white/95">
-            生成AIで、現場の事務と生産性を変える
+            生成AIで、現場の業務と生産性を変える
           </p>
           <h1 className="text-fluid-display mb-4 max-w-4xl font-bold leading-tight">
             物流企業特化<br />
@@ -125,7 +125,7 @@ export function HeroSection() {
             className="text-fluid-lead block w-full max-w-md rounded-full px-8 py-4 font-bold text-white shadow-soft-md transition-opacity hover:opacity-90 sm:inline-block sm:w-auto sm:max-w-none sm:px-10"
             style={{ backgroundColor: "var(--brand-accent)" }}
           >
-            無料相談・資料請求はこちら
+            無料相談はこちら
           </a>
           <div
             className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2"

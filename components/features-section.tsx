@@ -21,7 +21,7 @@ const onlineSteps = [
   },
 ]
 
-const offlineSteps = [
+const workshopSteps = [
   {
     title: "業務課題の深堀り",
     body: "業務課題を分析し、AIエージェントで自動化するタスクを設計します。",
@@ -79,7 +79,7 @@ export function FeaturesSection() {
     >
       <div className="container mx-auto">
         <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-16">
-          オンライン座学とオフライン実践を組み合わせたカリキュラム
+          全10回オンラインで実施するカリキュラム
         </h2>
         <div className="grid gap-x-12 gap-y-12 md:grid-cols-2 md:gap-y-16">
           <div className="rounded-xl bg-white p-4 shadow-soft md:p-8">
@@ -91,9 +91,9 @@ export function FeaturesSection() {
 
           <div className="rounded-xl bg-white p-4 shadow-soft md:p-8">
             <h3 className="text-fluid-heading-lg mb-6 border-b-2 border-blue-200 pb-4 font-bold text-brand-secondary">
-              オフライン実践（5時間）
+              オンライン実践・ワークショップ（5時間）
             </h3>
-            <CurriculumList steps={offlineSteps} startFrom={6} />
+            <CurriculumList steps={workshopSteps} startFrom={6} />
           </div>
         </div>
       </div>
