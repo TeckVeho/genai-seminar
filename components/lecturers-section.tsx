@@ -1,51 +1,29 @@
-const lecturers = [
-  {
-    name: "茂木 秀彦",
-    role: "DX研究所 代表",
-    bio: "DX研究所代表として各社の業務DX化に尽力。現在は生成AIを用いた各社の業務改善支援サポートにも着手している。",
-    imgSrc: "/images/ceo.jpg",
-    imgAlt: "茂木秀彦のプロフィール写真",
-  },
-  {
-    name: "池田 航平",
-    role: "AI コンサルタント",
-    bio: "VEHO Worksで生成AI導入を多数経験後、独立。現在も中小企業を中心に、現場で使えるAI導入支援を展開している。",
-    imgSrc: "/images/ikeda.jpg",
-    imgAlt: "池田航平のプロフィール写真",
-  },
-]
-
 export function LecturersSection() {
   return (
     <section id="lecturers" className="section-y section-x bg-brand-light-gray">
       <div className="container mx-auto">
         <h2 className="text-fluid-section mb-8 text-center font-bold text-brand-secondary md:mb-16">
-          経験豊富なプロフェッショナル講師陣
+          経験豊富なプロフェッショナル講師
         </h2>
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-10">
-          {lecturers.map((lecturer, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center gap-4 rounded-xl bg-white p-6 shadow-soft md:p-8"
-            >
-              <img
-                src={lecturer.imgSrc}
-                alt={lecturer.imgAlt}
-                width={128}
-                height={128}
-                className="h-32 w-32 shrink-0 rounded-full object-cover"
-              />
-              <div className="text-center md:text-left">
-                <h3 className="text-fluid-heading-lg font-bold text-brand-secondary">
-                  {lecturer.name}
-                </h3>
-                <p className="mb-2 font-semibold text-brand-primary">
-                  {lecturer.role}
-                </p>
-                <p className="text-fluid-body text-gray-600">{lecturer.bio}</p>
-              </div>
-            </div>
-          ))}
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-xl bg-white p-6 shadow-soft sm:flex-row sm:items-start sm:gap-10 md:p-10">
+          <img
+            src="/images/ceo.jpg"
+            alt="茂木秀彦のプロフィール写真"
+            width={160}
+            height={160}
+            className="h-40 w-40 shrink-0 rounded-full object-cover"
+          />
+          <div className="text-center sm:text-left">
+            <h3 className="text-fluid-heading-lg font-bold text-brand-secondary">
+              茂木 秀彦
+            </h3>
+            <p className="mb-3 font-semibold text-brand-primary">
+              DX研究所 代表
+            </p>
+            <p className="text-fluid-body leading-relaxed text-gray-600">
+              DX研究所代表として各社の業務DX化に尽力。現在は生成AIを用いた各社の業務改善支援サポートにも着手している。
+            </p>
+          </div>
         </div>
       </div>
     </section>
