@@ -6,10 +6,10 @@ export function SubsidySection() {
       <div className="container mx-auto">
         <div className="text-center">
           <h2 className="text-fluid-section mb-4 font-bold text-brand-secondary">
-            助成金活用による費用サポート
+            助成金活用による費用軽減
           </h2>
           <p className="text-fluid-lead mx-auto mb-8 max-w-3xl text-gray-600 md:mb-12">
-            当プログラムの導入も、人材開発支援助成金を活用し、企業負担を抑えられます。
+            当プログラムの導入も、人材開発支援助成金の要件を満たせば活用し、企業負担を抑えられる可能性があります。
           </p>
         </div>
         <div className="@container mx-auto flex max-w-4xl flex-col items-center gap-8 rounded-xl bg-white p-4 shadow-soft md:flex-row md:p-8 lg:p-12">
