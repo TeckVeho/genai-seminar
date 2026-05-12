@@ -10,8 +10,9 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { href: "#solution", label: "選ばれる理由" },
   { href: "#curriculum", label: "カリキュラム" },
-  { href: "#subsidy", label: "助成金" },
   { href: "#lecturers", label: "講師紹介" },
+  { href: "#pricing", label: "料金" },
+  { href: "#subsidy", label: "助成金" },
   { href: "#flow", label: "導入の流れ" },
   { href: "#faq", label: "よくあるご質問" },
 ]
@@ -28,7 +29,7 @@ export function HeroSection() {
               href="#"
               className="flex shrink-0 items-center py-1 text-lg font-bold tracking-tight text-white md:text-xl"
             >
-              DX研究所
+              株式会社Asiart
             </a>
 
             <nav className="hidden items-center space-x-6 lg:flex">

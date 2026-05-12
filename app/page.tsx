@@ -5,6 +5,7 @@ import { FeaturesSection } from "@/components/features-section"
 import { GrowthSection } from "@/components/growth-section"
 import { LecturersSection } from "@/components/lecturers-section"
 import { SubsidySection } from "@/components/subsidy-section"
+import { PricingSection } from "@/components/pricing-section"
 import { UniversitySection } from "@/components/university-section"
 import { AppEventSection } from "@/components/app-event-section"
 import { AboutMediaSection } from "@/components/about-media-section"
@@ -34,21 +35,24 @@ export default function Home() {
           <LecturersSection />
         </FadeInOnScroll>
         <FadeInOnScroll delayIndex={5}>
-          <SubsidySection />
+          <PricingSection />
         </FadeInOnScroll>
         <FadeInOnScroll delayIndex={6}>
-          <UniversitySection />
+          <SubsidySection />
         </FadeInOnScroll>
         <FadeInOnScroll delayIndex={7}>
-          <AppEventSection />
+          <UniversitySection />
         </FadeInOnScroll>
         <FadeInOnScroll delayIndex={8}>
-          <AboutMediaSection />
+          <AppEventSection />
         </FadeInOnScroll>
         <FadeInOnScroll delayIndex={9}>
-          <ContactSection />
+          <AboutMediaSection />
         </FadeInOnScroll>
         <FadeInOnScroll delayIndex={10}>
+          <ContactSection />
+        </FadeInOnScroll>
+        <FadeInOnScroll delayIndex={11}>
           <PricingFooterSection />
         </FadeInOnScroll>
       </main>
