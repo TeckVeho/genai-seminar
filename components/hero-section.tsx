@@ -29,7 +29,7 @@ export function HeroSection() {
               href="#"
               className="flex shrink-0 items-center py-1 text-lg font-bold tracking-tight text-white md:text-xl"
             >
-              株式会社Asiart
+              株式会社DX研究所
             </a>
 
             <nav className="hidden items-center space-x-6 lg:flex">
@@ -117,7 +117,7 @@ export function HeroSection() {
             AI人材育成プログラム
           </h1>
           <p className="text-fluid-lead mb-8 max-w-2xl text-white/95">
-            定型業務・文書作成・社内外のコミュニケーションを効率化。全10回・10時間で、
+            定型業務・文書作成・社内外のコミュニケーションを効率化。全12回・12時間で、
             <br />
             現場ですぐ使える実践力を。
           </p>

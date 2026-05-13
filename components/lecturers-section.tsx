@@ -18,10 +18,10 @@ export function LecturersSection() {
               茂木 秀彦
             </h3>
             <p className="mb-3 font-semibold text-brand-primary">
-              株式会社Asiart 代表
+              DX研究所 代表
             </p>
             <p className="text-fluid-body leading-relaxed text-gray-600">
-              株式会社Asiart代表として各社の業務DX化に尽力。現在は生成AIを用いた各社の業務改善支援サポートにも着手している。
+              DX研究所代表として各社の業務DX化に尽力。現在は生成AIを用いた各社の業務改善支援サポートにも着手している。
             </p>
           </div>
         </div>
