@@ -4,7 +4,7 @@ export function PricingFooterSection() {
       <div className="container mx-auto px-4 py-10 md:px-6">
         <div className="mb-6 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <p className="text-fluid-heading-lg mb-1 font-bold">株式会社DX研究所</p>
+            <p className="text-fluid-heading-lg mb-1 font-bold">株式会社Impliq</p>
             <p className="text-sm text-white/70">
               物流企業特化
               <br />
@@ -32,7 +32,7 @@ export function PricingFooterSection() {
         </div>
         <div className="border-t border-white/20 pt-6">
           <p className="text-center text-sm text-white/60">
-            &copy; 株式会社DX研究所. All rights reserved.
+            &copy; 株式会社Impliq. All rights reserved.
           </p>
         </div>
       </div>
